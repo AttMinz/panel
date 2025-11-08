@@ -2,18 +2,10 @@ const express = require('express');
 const fetch = require('node-fetch');
 const cors = require('cors');
 const path = require('path');
-
 const app = express();
-
-app.use(cors({
-  origin: '*',
-  methods: ['GET', 'POST', 'DELETE', 'PATCH'],
-  allowedHeaders: ['Content-Type']
-}));
-
+app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
-
 const apikey = 'isidewek';
 const capikey = 'isidewek';
 const domain = 'isidewek';
@@ -557,11 +549,11 @@ app.get('/api', (req, res) => {
   });
 });
 
-app.get('*', (req, res) => {
+app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-const PORT = process.env.SERVER_PORT || 5000;
+const PORT = process.env.PORT || process.env.SERVER_PORT || 5000;
 if (process.env.NODE_ENV !== 'production') {
-  app.listen(PORT, '0.0.0.0', () => {});
+  app.listen(PORT, () => {});
 }
