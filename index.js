@@ -554,6 +554,4 @@ app.get('/', (req, res) => {
 });
 
 const PORT = process.env.PORT || process.env.SERVER_PORT || 5000;
-if (process.env.NODE_ENV !== 'production') {
-  app.listen(PORT, () => {});
-}
+app.listen(PORT, () => {});
