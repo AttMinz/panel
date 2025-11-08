@@ -1,14 +1,10 @@
 {
-  "name": "zeroxone-panel",
-  "version": "1.0.0",
-  "description": "ZEROXONE Pterodactyl Panel Management System",
-  "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
   "dependencies": {
-    "express": "latest",
-    "node-fetch": "latest",
-    "cors": "latest"
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "node-fetch": "^3.3.2"
   }
 }
